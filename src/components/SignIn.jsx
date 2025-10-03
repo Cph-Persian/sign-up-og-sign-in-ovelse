@@ -6,16 +6,34 @@ const supabase = createClient("https://bpbyciweccltsmfqszia.supabase.co", "eyJhb
 
     // Forsøger at oprette bruger i Supabase
 export default function SignIn() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    // usestate hooks samler state i et objekt
+
+    const [formdata, setFormData] = useState(
+        {
+        email: "",
+        password: ""
+        }
+    )
+
+    const handleInput = (e) => {
+        console.log(e.target.value);
+        console.log(e.target.name);
+
+        setFormData(
+            {
+            ...formdata,
+            [e.target.name] : e.target.value
+            }
+        )
+    }
 
         // håndter form submit (e.preventDefault) forhindrer side reload
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+      email: formdata.email,
+      password: formdata.password,
     });
 
     // Validerer i konsollen
@@ -32,15 +50,15 @@ export default function SignIn() {
       <input
         type="email"
         placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={formdata.email}
+        onChange={handleInput}
       />
 
       <input
         type="password"
         placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={formdata.password}
+        onChange={handleInput}
       />
       <button type="submit">Sign In</button>
     </form>

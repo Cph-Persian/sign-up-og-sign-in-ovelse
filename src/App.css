@@ -1,4 +1,48 @@
 .App {
   text-align: center;
+  font-family: 'Gill Sans';
+  background-color: #8a765e;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
+h1{
+  font-size: 40px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input{
+  border-color: #000;
+  box-shadow: 0 0 10px #fff;
+  padding : 20px;
+}
+
+button{
+  color: black;
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px #fff;
+  padding : 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+  width: 150px;
+}
+
+button:hover{
+  color: white;
+  background-color: #000;
+  border: 2px solid white;
+  box-shadow: 0 0 10px #fff;
+}

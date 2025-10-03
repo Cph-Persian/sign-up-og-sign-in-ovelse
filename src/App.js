@@ -6,12 +6,14 @@ function App() {
   return (
     <div className="App">
     
-    <h1>Sign Up</h1>
+    <h1>SIGN UP HERE</h1>
     <SignUpForm />
 
     <br></br>
 
-    <h1>Sign In</h1>
+    <h1>ALREADY HAVE AN ACCOUNT? </h1>
+
+    <h1>SIGN IN HERE</h1>
     <SignIn />
 
     </div>
